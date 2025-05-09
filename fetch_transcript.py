@@ -59,7 +59,7 @@ def fetch_transcript(video_url: str, preferred_languages: List[str] = ['en'], ta
                 raise TranscriptError("No transcripts found in the preferred languages")
 
             transcript_data = transcript.fetch()
-            combined_transcript = " ".join(item['text'] for item in transcript_data)
+            combined_transcript = " ".join(item.text for item in transcript_data)
 
             # Translate if the transcript language is not the target language
             if transcript.language_code != target_language:
